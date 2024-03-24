@@ -69,22 +69,22 @@ The backend currently stores documents uploaded in the File management system it
 * The backend consists of 3 major folders : 
   1. api 
   2. engine
-  3. docs
+  3. docs <br> 
   Apart from this we have configuration files like data.db as sqlite database,.env files, requirements.txt, .gitginore files.
 
 * The api folder has a standard structure with the following structure:
   1. models 
-  2. routers 
-  These folders consist of the respective entity files for the models and routers respectively.
-  THe app.py is the main file where the server is initiated.
-  Config file for easier switching of environments
-  database file for Database configurations and intiation.
+  2. routers  <br> 
+  These folders consist of the respective entity files for the models and routers respectively. <br> 
+  THe app.py is the main file where the server is initiated. <br> 
+  Config file for easier switching of environments.  <br> 
+  database file for Database configurations and intiation.  <br> 
 
-* The engine is where we process the document and with the context of chat history we answer the question being asked 
-  The main.py consists of all the processing and returns the answer and also makes sure that question answer gets appended to chat history.
-  utils.py consists of some other helper functions required for the engine.
+* The engine is where we process the document and with the context of chat history we answer the question being asked.  <br> 
+  The main.py consists of all the processing and returns the answer and also makes sure that question answer gets appended to chat history.  <br> 
+  utils.py consists of some other helper functions required for the engine.  <br> 
 
-* docs 
+* docs  <br> 
   This is where we are storing all the files currently and will be processed by the engine.
 
 
