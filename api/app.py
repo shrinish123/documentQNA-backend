@@ -16,7 +16,7 @@ async def lifespan(app:FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
-# Allow all origins (replace "*" with specific origins if needed)
+# middlewares 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -24,6 +24,6 @@ app.add_middleware(
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
 )
-
+# routers 
 app.include_router(document_router)
 app.include_router(chat_message_router)

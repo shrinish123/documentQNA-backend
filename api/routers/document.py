@@ -1,7 +1,6 @@
 import os
 
 from fastapi import APIRouter,UploadFile,File
-from api.models.document import Document
 from api.database import database,document_table
 
 router = APIRouter(prefix='/document')
@@ -30,8 +29,3 @@ async def create_doc(file: UploadFile = File(...)):
     
     return {**document_data, "id": document_id}
 
-
-@router.get('/getAll', response_model=list[Document])
-async def get_all_documents():
-      query = document_table.select()
-      return await database.fetch_all(query)

@@ -9,7 +9,7 @@ document_table = sqlalchemy.Table(
     metadata, 
     sqlalchemy.Column('id',sqlalchemy.Integer,primary_key=True),
     sqlalchemy.Column('title',sqlalchemy.String),
-    sqlalchemy.Column('path', sqlalchemy.String,unique=True)
+    sqlalchemy.Column('path', sqlalchemy.String)
 )
 
 chat_message_table = sqlalchemy.Table(

@@ -1,4 +1,4 @@
-# AI Planet - QnA with Document Backend
+# 'AI Planet - QnA with Document' --Backend
 
  AI Planet - QnA with Document Backend is built with FastAPI-Python, SQLite and with help of OpenAI Models along with LangChain.
 
@@ -40,5 +40,52 @@ The backend currently stores documents uploaded in the File management system it
 * The server would be up and running on http://localhost:8000
 
 # API Documentation 
+
+* To upload a document :
+
+```bash
+  URL : 'http://localhost:8000/document/create'
+  body : file : [Your_document]
+
+  Example_Response : 
+  {
+    "id" : 1,
+    "title" : "file_name",
+    "path" : "path to file where it is uploaded in backend directory"
+  }
+ ```
+
+* To get an answer corresponding to document :
+
+```bash
+  URL : 'http://localhost:8000/chat_message/get_answer{doc_id}'
+  body : question : "example question"
+
+  Example_Response : "answer to the question"
+ ```
+
+# Application Architecture
+
+* The backend consists of 3 major folders : 
+  1. api 
+  2. engine
+  3. docs
+  Apart from this we have configuration files like data.db as sqlite database,.env files, requirements.txt, .gitginore files.
+
+* The api folder has a standard structure with the following structure:
+  1. models 
+  2. routers 
+  These folders consist of the respective entity files for the models and routers respectively.
+  THe app.py is the main file where the server is initiated.
+  Config file for easier switching of environments
+  database file for Database configurations and intiation.
+
+* The engine is where we process the document and with the context of chat history we answer the question being asked 
+  The main.py consists of all the processing and returns the answer and also makes sure that question answer gets appended to chat history.
+  utils.py consists of some other helper functions required for the engine.
+
+* docs 
+  This is where we are storing all the files currently and will be processed by the engine.
+
 
 

@@ -34,8 +34,10 @@ async def get_chat_answer(doc_id : int,question : Question):
       chat_history = []
       get_chat_history(chat_history,chat_history_messages)
       
+      # get the answer from the engine with Langchain 
       answer = get_answer(chat_history,question.question,doc.path)
       
+      # Add the new qna to the chat table 
       await append_new_qa(question.question,answer.content,doc_id)
       
       return answer.content
